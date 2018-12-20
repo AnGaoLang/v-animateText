@@ -6,3 +6,6 @@
  * key:必须为独一无二的key，为了区分全局数组里的定时器
  * value: 可为传文本，也可为表达式，若为表达式需写在模板字符串内``,不可为函数。
  * 传入的表达式实现基于eval()，注意不可传入%/等特殊字符。
+
+# 文本效果如下
+![Image text](https://github.com/AnGaoLang/v-animateText/blob/master/v-animate.gif)
