@@ -5,9 +5,13 @@
 */
 !function(Vue) {
   window.VAnimateTime = []; // 全局的定时器id储存数组，以指令的参数为独一无二的key
+  window.evil = function (fn) { // 代替eavl方法执行字符串，会将"2018-02-12"自动转换
+    var Fn = Function;
+    return new Function("return " + fn)();
+  };
   Vue.directive('animate', function (el, binding) {
-    let oldValue = binding.oldValue ? eval(binding.oldValue.value) : null; // 初始化时判断值是否存在
-    let currentValue = eval(binding.value.value); // 执行字符串内的js
+    let oldValue = binding.oldValue ? evil(binding.oldValue.value) : null; // 初始化时判断值是否存在
+    let currentValue = evil(binding.value.value); // 执行字符串内的js
     // 传入的值存在，且被更新,才会进行处理
     if (oldValue !== currentValue) {
       let key = binding.value.key;
