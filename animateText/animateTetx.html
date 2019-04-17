@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" style="width:100%;height:100%;"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+  </head>
+  <body style="width:100%;height:100%;">
+    <div id="w" style="width:100%;height:100%;"></div>
+    
+    <script src="./jquery-3.2.1.min.js"></script>
+    <script src="./animatett.js"></script>
+    <script>
+    $(function () {
+      var div = '';
+      for(var j = 0; j< 100; j++) {
+        div = div + '<div class="asd' + j + '">asdsadsadsad3re</div>';
+      };
+      $(div).appendTo('#w');
+      setTimeout(function () {
+        for(var i = 0; i < 100; i++) {
+          $('.asd' + i).animatext({
+            speed: 200,
+            infinite: true,
+            timeToRelaunch: 3000
+          })
+        }
+      },1000)
+      
+    })</script>
+  </body>
+</html>
