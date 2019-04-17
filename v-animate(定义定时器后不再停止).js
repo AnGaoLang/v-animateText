@@ -21,7 +21,7 @@
           clearInterval(VAnimateTime[h][key]);
           VAnimateTime.splice(h,1);
         }
-      }
+      };
       // 将文本字符串分割为数组，数字要转换为字符串才能分割为数组
       var StringArray = currentValue.toString().split('');
       var html = "";
